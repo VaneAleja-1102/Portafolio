@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio Personal – 1 página</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Lora:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#20b3ad;         /* Cambia el color principal aquí */
+      --accent-2:#1aa59f;
+      --ink:#24343d;
+      --muted:#5b6a72;
+      --paper:#ffffff;
+      --soft:#eef7f6;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--ink); background:
+        radial-gradient(circle at 16px 16px,#a4efe9 2px,transparent 3px) 0 0/22px 22px,
+        linear-gradient(#b2f0ec,#e7fbfa) fixed; /* fondo suave tipo plantilla */
+    }
+    .page{max-width:980px; margin:32px auto; background:var(--paper); box-shadow:0 12px 32px rgba(2,26,34,.18);
+      border-radius:16px; overflow:hidden; position:relative}
+    /* Borde decorativo exterior */
+    .page:before{content:""; position:absolute; inset:10px; border:3px dotted var(--accent); pointer-events:none; border-radius:12px}
+
+    header.hero{padding:28px 32px 12px; text-align:center}
+    header.hero h1{font-family:Lora,Georgia,serif; letter-spacing:.5px; margin:0; font-size:28px; color:#0e7773}
+    header.hero p{margin:10px auto 0; max-width:860px; color:var(--muted); font-size:14px}
+
+    /* Encabezado con foto y datos de contacto */
+    .top{display:grid; grid-template-columns:340px 1fr; gap:24px; padding:10px 24px 24px; align-items:stretch}
+    .contact{
+      background:var(--accent); color:#eaffff; border-radius:20px; padding:22px 22px 22px 24px; position:relative;
+      display:flex; flex-direction:column; justify-content:center; min-height:190px;
+    }
+    .contact .row{display:flex; gap:10px; align-items:center; margin:10px 0}
+    .contact .ico{width:18px; height:18px; display:inline-grid; place-items:center; background:#fff2; border-radius:50%}
+    .contact a{color:#eaffff; text-decoration:none}
+
+    .idblock{position:relative; padding-right:24px; display:flex; align-items:center; gap:24px}
+    .avatar{position:relative; width:140px; height:140px; flex:0 0 140px; border-radius:50%; border:10px solid #f3fbfa; box-shadow:0 6px 18px rgba(0,0,0,.1); overflow:hidden}
+    .avatar img{width:100%; height:100%; object-fit:cover; display:block}
+
+    .who{display:flex; flex-direction:column}
+    .who .name{font-family:Lora,Georgia,serif; font-weight:700; font-size:32px; line-height:1.1; margin:0; color:#156b68}
+    .who .role{font-style:italic; font-size:18px; color:#2d8a86; margin-top:6px}
+
+    /* Contenido principal */
+    .content{display:grid; grid-template-columns:1fr 1fr; gap:28px; padding:0 24px 32px 24px}
+    section h3{display:flex; align-items:center; gap:10px; font-family:Lora,Georgia,serif; color:#156b68; font-size:20px; margin:0 0 12px}
+    section h3 svg{color:var(--accent)}
+    .card{background:var(--soft); border:1px solid #d3eeeb; border-radius:14px; padding:16px 18px;}
+    .list{padding-left:18px; margin:8px 0 0}
+    .list li{margin:8px 0; color:#33464f}
+    .muted{color:var(--muted)}
+
+    /* Experiencia/educación items */
+    .item{margin:10px 0}
+    .item .place{font-weight:700}
+    .item .title{font-weight:600}
+    .item .time{font-size:13px; color:var(--muted)}
+
+    /* Barras de habilidades */
+    .meter{height:8px; background:#d7efee; border-radius:999px; position:relative; overflow:hidden}
+    .meter::after{content:""; position:absolute; inset:0; width:var(--val,70%); background:linear-gradient(90deg,var(--accent),var(--accent-2)); border-radius:999px}
+    .skill{display:grid; grid-template-columns:1fr auto; gap:10px; align-items:center; margin:12px 0}
+    .skill .label{font-weight:600}
+
+    /* Chips */
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    .chip{background:#e8fbfa; border:1px solid #c8efec; padding:6px 10px; border-radius:999px; font-size:13px}
+
+    /* Responsive */
+    @media (max-width:920px){
+      .top{grid-template-columns:1fr}
+      .content{grid-template-columns:1fr}
+      .idblock{flex-direction:row}
+    }
+    @media print{
+      body{background:#fff}
+      .page{box-shadow:none}
+      .page:before{display:none}
+    }
+  </style>
+</head>
+<body>
+  <main class="page" id="cv">
+    <header class="hero">
+      <h1>Portafolio personal</h1>
+    </header>
+
+    <div class="top">
+      <aside class="contact">
+        <div class="row"><span class="ico">📞</span><span><strong>Tel.:</strong> <a href="tel:+573193384478">+57 319 338 4478</a></span></div>
+        <div class="row"><span class="ico">✉️</span><span><strong>Email:</strong> <a href="mailto:nicolas221archila@gmail.com">nicolas221archila@gmail.com</a></span></div>
+        <div class="row"><span class="ico">📍</span><span><strong>Dirección:</strong> Diagonal 61#7-77 Tunja</span></div>
+      </aside>
+
+      <div class="idblock">
+        <figure class="avatar">
+          <!-- 👉 Reemplaza el src por tu archivo local -->
+          <img id="avatar" src="../images/Archi.jpg" alt="Foto de perfil" />
+        </figure>
+        <div class="who">
+          <h2 class="name">Nicolas Archila</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- COLUMNA IZQUIERDA -->
+      <section>
+        <div class="card">
+          <h3>🎯 OBJETIVO</h3>
+          <ul class="list">
+            <li>Redefinir el concepto de “aportar valor” a través de disciplina y mejora continua.</li>
+            <li>Lograr eficiencia operativa con automatización de procesos.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h3>🎓 EDUCACIÓN</h3>
+          <div class="item">
+            <div class="title">Ingeniero de Sistemas</div>
+            <div class="place">Universidad Santo Tomas <span class="time"> 2022–2025</span></div>
+          </div>
+          <div class="item">
+            <div class="title">Bachillerato</div>
+            <div class="place">Colegio de Boyaca<span class="time"> 2008–2021</span></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h3>💎 HABILIDADES & HOBBIES</h3>
+          <div class="chips">
+            <span class="chip">Viajar</span>
+            <span class="chip">Comunicación</span>
+            <span class="chip">Creativo</span>
+            <span class="chip">Adaptable</span>
+            <span class="chip">Voleibol</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- COLUMNA DERECHA -->
+      <section>
+        <div class="card">
+          <h3>📚 EXPERTISE</h3>
+          <div class="skill"><span class="label">Microsoft Word</span> <span class="muted">90%</span></div>
+          <div class="meter" style="--val:90%"></div>
+
+          <div class="skill"><span class="label">Microsoft PowerPoint</span> <span class="muted">85%</span></div>
+          <div class="meter" style="--val:85%"></div>
+
+          <div class="skill"><span class="label">Microsoft Excel</span> <span class="muted">88%</span></div>
+          <div class="meter" style="--val:88%"></div>
+
+          <div class="skill"><span class="label">Java Script</span> <span class="muted">80%</span></div>
+          <div class="meter" style="--val:80%"></div>
+
+          <div class="skill"><span class="label">Backend</span> <span class="muted">70%</span></div>
+          <div class="meter" style="--val:70%"></div>
+
+          <div class="skill"><span class="label">Frontend</span> <span class="muted">75%</span></div>
+          <div class="meter" style="--val:75%"></div>
+        </div>
+
+        
+
+        <div class="card" style="margin-top:16px">
+          <h3>👥 REFERENCIAS</h3>
+          <ul class="list">
+            <li><strong>Mrs. Vanessa Vasquez</strong> — Manager</li>
+            <li>Disponible bajo solicitud.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    // (Opcional) Cambia el color del tema con JS si lo necesitas
+    // document.documentElement.style.setProperty('--accent', '#0ea5e9');
+  </script>
+</body>
+</html>
