@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Lora:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --accent:#20b3ad;         /* Cambia el color principal aquí */
+      --accent:#20b3ad;         
       --accent-2:#1aa59f;
       --ink:#24343d;
       --muted:#5b6a72;
@@ -21,18 +21,16 @@
       margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
       color:var(--ink); background:
         radial-gradient(circle at 16px 16px,#a4efe9 2px,transparent 3px) 0 0/22px 22px,
-        linear-gradient(#b2f0ec,#e7fbfa) fixed; /* fondo suave tipo plantilla */
+        linear-gradient(#b2f0ec,#e7fbfa) fixed; 
     }
     .page{max-width:980px; margin:32px auto; background:var(--paper); box-shadow:0 12px 32px rgba(2,26,34,.18);
       border-radius:16px; overflow:hidden; position:relative}
-    /* Borde decorativo exterior */
     .page:before{content:""; position:absolute; inset:10px; border:3px dotted var(--accent); pointer-events:none; border-radius:12px}
 
     header.hero{padding:28px 32px 12px; text-align:center}
     header.hero h1{font-family:Lora,Georgia,serif; letter-spacing:.5px; margin:0; font-size:28px; color:#0e7773}
     header.hero p{margin:10px auto 0; max-width:860px; color:var(--muted); font-size:14px}
 
-    /* Encabezado con foto y datos de contacto */
     .top{display:grid; grid-template-columns:340px 1fr; gap:24px; padding:10px 24px 24px; align-items:stretch}
     .contact{
       background:var(--accent); color:#eaffff; border-radius:20px; padding:22px 22px 22px 24px; position:relative;
@@ -50,7 +48,7 @@
     .who .name{font-family:Lora,Georgia,serif; font-weight:700; font-size:32px; line-height:1.1; margin:0; color:#156b68}
     .who .role{font-style:italic; font-size:18px; color:#2d8a86; margin-top:6px}
 
-    /* Contenido principal */
+ 
     .content{display:grid; grid-template-columns:1fr 1fr; gap:28px; padding:0 24px 32px 24px}
     section h3{display:flex; align-items:center; gap:10px; font-family:Lora,Georgia,serif; color:#156b68; font-size:20px; margin:0 0 12px}
     section h3 svg{color:var(--accent)}
@@ -59,23 +57,22 @@
     .list li{margin:8px 0; color:#33464f}
     .muted{color:var(--muted)}
 
-    /* Experiencia/educación items */
+
     .item{margin:10px 0}
     .item .place{font-weight:700}
     .item .title{font-weight:600}
     .item .time{font-size:13px; color:var(--muted)}
 
-    /* Barras de habilidades */
+  
     .meter{height:8px; background:#d7efee; border-radius:999px; position:relative; overflow:hidden}
     .meter::after{content:""; position:absolute; inset:0; width:var(--val,70%); background:linear-gradient(90deg,var(--accent),var(--accent-2)); border-radius:999px}
     .skill{display:grid; grid-template-columns:1fr auto; gap:10px; align-items:center; margin:12px 0}
     .skill .label{font-weight:600}
 
-    /* Chips */
     .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
     .chip{background:#e8fbfa; border:1px solid #c8efec; padding:6px 10px; border-radius:999px; font-size:13px}
 
-    /* Responsive */
+  
     @media (max-width:920px){
       .top{grid-template-columns:1fr}
       .content{grid-template-columns:1fr}
@@ -103,7 +100,7 @@
 
       <div class="idblock">
         <figure class="avatar">
-          <!-- 👉 Reemplaza el src por tu archivo local -->
+
           <img id="avatar" src="../images/Archi.jpg" alt="Foto de perfil" />
         </figure>
         <div class="who">
@@ -113,7 +110,7 @@
     </div>
 
     <div class="content">
-      <!-- COLUMNA IZQUIERDA -->
+     
       <section>
         <div class="card">
           <h3>🎯 OBJETIVO</h3>
@@ -147,7 +144,7 @@
         </div>
       </section>
 
-      <!-- COLUMNA DERECHA -->
+    
       <section>
         <div class="card">
           <h3>📚 EXPERTISE</h3>
@@ -184,8 +181,6 @@
   </main>
 
   <script>
-    // (Opcional) Cambia el color del tema con JS si lo necesitas
-    // document.documentElement.style.setProperty('--accent', '#0ea5e9');
   </script>
 </body>
 </html>
